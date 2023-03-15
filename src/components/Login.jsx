@@ -47,7 +47,20 @@ export default function Login() {
   };
 
   const onClickRegister = () => {
-    createUserWithEmailAndPassword(auth, email, password)
+    if (registerInformation.email !== registerInformation.confirmEmail) {
+      alert("Email and Confirm Email are Not Same");
+      return;
+    } else if (
+      registerInformation.password !== registerInformation.confirmPassword
+    ) {
+      alert("Password and Confirm Password are Not Same");
+      return;
+    }
+    createUserWithEmailAndPassword(
+      auth,
+      registerInformation.email,
+      registerInformation.password
+    )
       .then(() => {
         navigate("/home");
       })

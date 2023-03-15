@@ -1,0 +1,118 @@
+.todo_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(238, 174, 202);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(0, 0, 0, 1) 0%
+  );
+  height: 100vh;
+}
+.input_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.todo_item_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 15px;
+  background-color: rgb(11, 132, 132);
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.content_container {
+  border-radius: 4px;
+  width: 60%;
+  height: 70%;
+  padding: 15px;
+  box-shadow: 0px 4px 16px 0px #bfbfbf;
+  overflow-y: auto;
+}
+.todo_header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #bfbfbf;
+  height: 60px;
+}
+.signOutButton {
+  background-color: #1d3aaf;
+  color: white;
+  border: none;
+  outline: none;
+  height: 35px;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 4px;
+}
+.add_button {
+  background-color: #059a3a;
+  color: white;
+  border: none;
+  outline: none;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 80px;
+}
+.edit_button {
+  background-color: #041868;
+  color: white;
+  border: none;
+  outline: none;
+  height: 35px;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 4px;
+}
+.Delete_button {
+  background-color: #a30a05;
+  color: white;
+  border: none;
+  outline: none;
+  height: 35px;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+.todo_element {
+  width: 80%;
+  margin-right: 20px;
+}
+
+.todo_item {
+  font-size: 24px;
+}
+
+.signOutButton:hover {
+  background-color: #102572;
+}
+.add_button:hover {
+  background-color: #046e29;
+}
+
+@media screen and (max-width: 992px) {
+  .todo_item {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .todo_item {
+    font-size: 15px;
+  }
+  .content_container {
+    width: 80%;
+  }
+}
