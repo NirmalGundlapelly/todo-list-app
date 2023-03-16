@@ -17,7 +17,6 @@ export default function Home() {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        console.log(user);
         onValue(ref(db, `/${auth.currentUser.uid}`), (snapshot) => {
           setTodoList([]);
           const data = snapshot.val();
@@ -82,6 +81,10 @@ export default function Home() {
 
   const count = todoList.length;
 
+  let totalTodoList = todoList.sort(function (a, b) {
+    return a - b;
+  });
+
   return (
     <>
       <div className="todo_header">
@@ -116,8 +119,7 @@ export default function Home() {
           </div>
 
           {/* Reading The Todo List */}
-
-          {todoList.map((todo) => (
+          {totalTodoList.map((todo) => (
             <div key={todo.uidd} className="todo_item_list">
               <h1 id="todo" className="todo_item">
                 {todo.todo}
