@@ -26,7 +26,7 @@ export default function Login() {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        navigate("/home");
+        navigate("/");
       }
     });
   }, []);
@@ -38,7 +38,7 @@ export default function Login() {
   const onClickSignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        navigate("/home");
+        navigate("/");
       })
       .catch((error) => {
         alert(error.message);
@@ -62,7 +62,7 @@ export default function Login() {
       registerInformation.password
     )
       .then(() => {
-        navigate("/home");
+        navigate("/");
       })
       .catch((error) => alert(error.message));
   };

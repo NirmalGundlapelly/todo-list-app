@@ -27,7 +27,7 @@ export default function Home() {
           }
         });
       } else if (!user) {
-        navigate("/");
+        navigate("/login");
       }
     });
   }, []);
@@ -35,7 +35,7 @@ export default function Home() {
   const onClickSignOut = () => {
     signOut(auth)
       .then(() => {
-        navigate("/");
+        navigate("/login");
       })
       .catch((error) => {
         alert(error.message);
